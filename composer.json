@@ -1,0 +1,23 @@
+{
+    "name": "modnarlluf/discbot",
+
+    "authors": [
+        {
+            "name": "Brice Sigura",
+            "email": "brice.sigura@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "ModnarLluf\\DiscBot\\": "src/"
+        }
+    },
+
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "team-reflex/discord-php": "^3.2"
+    },
+
+    "minimum-stability": "dev"
+}
