@@ -14,21 +14,22 @@ $discord = new Discord($config['token-bot']);
 /** @var WebSocket $ws */
 $ws = new WebSocket($discord);
 
-$router = new \ModnarLluf\DiscBot\Router([
+$dispatcher = new \ModnarLluf\DiscBot\Dispatcher([
     new MessageHandler\Cat(),
     new MessageHandler\TaGueule(),
     new MessageHandler\Dicer(),
     new MessageHandler\OnlyWatch(),
     new MessageHandler\OverwatchTimeleft(),
+    new MessageHandler\Propre(),
 ]);
 
-$ws->on('ready', function ($discord) use ($ws, $router) {
+$ws->on('ready', function ($discord) use ($ws, $dispatcher) {
     echo "Bot is ready!".PHP_EOL;
 
-    $ws->on('message', function ($message, $discord) use ($ws, $router) {
+    $ws->on('message', function ($message, $discord) use ($ws, $dispatcher) {
         if ($message->author->username !== 'modnarbot') {
             // Send message to router
-            $router->sendThroughHandlers($message);
+            $dispatcher->dispatch($message);
         }
     });
 });
