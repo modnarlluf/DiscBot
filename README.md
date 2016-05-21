@@ -6,10 +6,9 @@ This repository is a set of examples on how to use the [DiscordPHP](https://gith
 Installation
 =
 
-Don't forget to create a config file:
-
 ```bash
-cp config.php.dist config.php
+composer install
+cp app/config.php.dist app/config.php   # don't forget to edit your configuration
 ```
 
 Usage
@@ -17,7 +16,7 @@ Usage
 
 Start the bot:
 ```bash
-php index.php
+php bot.php
 ```
 
 Commandes
