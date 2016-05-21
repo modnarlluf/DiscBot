@@ -27,4 +27,4 @@ Commandes
 - `!tg` or `!tagueule` sends a link to [this gif](http://i.imgur.com/3CKPQ4W.gif).
 - If a message contains `http://onlywat.ch`, the bot sends the same gif as above.
 - `!ow.timeleft` shows the remaining time before [Overwatch](https://playoverwatch.com/en-us/)'s launch.
-- `!dice 1d20+5` is a RPG tool for throw dices. You can use shortcuts like `!dice 20+3` (<=> `!dice 1d20+3`) or `!dice 18`(<=> `!dice 1d18+0`)
+- `!dice 1d20+5` is a RPG tool to throw dice. You can use shortcuts like `!dice 20+3` (⇔ `!dice 1d20+3`) or `!dice 18` (⇔ `!dice 1d18+0`)
