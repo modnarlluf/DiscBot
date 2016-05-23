@@ -32,4 +32,12 @@ class Propre implements MessageHandler
     {
         return $message->content === '!propre';
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!propre: sends an proper gif.';
+    }
 }

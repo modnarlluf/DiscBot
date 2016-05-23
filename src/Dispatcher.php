@@ -1,6 +1,7 @@
 <?php
 
 namespace ModnarLluf\DiscBot;
+use Discord\Parts\Channel\Message;
 
 /**
  * Class Dispatcher
@@ -23,11 +24,24 @@ class Dispatcher
     }
 
     /**
-     * Loop on handlers and handle message for compatibles handlers
      *
      * @param $message
      */
     public function dispatch($message)
+    {
+        if (0 === strpos($message->content, '!help')) {
+            $this->help($message);
+        } else {
+            $this->dispatchToHandlers($message);
+        }
+    }
+
+    /**
+     * Loop on handlers and handle message for compatibles handlers
+     *
+     * @param Message $message
+     */
+    public function dispatchToHandlers($message)
     {
         foreach($this->listHandlers() as $handler) {
             /** @var MessageHandler $handler */
@@ -35,6 +49,25 @@ class Dispatcher
                 $handler->handle($message);
             }
         }
+    }
+
+    /**
+     * Loop on handlers to print each help
+     *
+     * @param $message
+     */
+    public function help($message)
+    {
+        $helps = [];
+
+        foreach($this->listHandlers() as $handler) {
+            /** @var MessageHandler $handler */
+            $helps[] = $handler::getHelp();
+        }
+
+        $help = '```'. implode("\n\n", $helps) .'```';
+
+        $message->channel->sendMessage($help);
     }
 
     /**
