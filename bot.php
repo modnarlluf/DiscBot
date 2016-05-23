@@ -20,6 +20,6 @@ $server = (new \ModnarLluf\DiscBot\Server(
         new MessageHandler\OverwatchTimeleft(),
         new MessageHandler\Propre(),
         new MessageHandler\NomanskyTimeleft(),
-        new MessageHandler\BePrepare(),
+        new MessageHandler\BePrepared(),
     ]
 ))->run();

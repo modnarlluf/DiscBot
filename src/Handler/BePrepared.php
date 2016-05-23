@@ -8,7 +8,7 @@ use ModnarLluf\DiscBot\MessageHandler;
  * @package ModnarLluf\DiscBot\Handler
  * @author Florian Rosito <florian@rosito.fr>
  */
-class BePrepare implements MessageHandler
+class BePrepared implements MessageHandler
 {
     const URL = 'http://memestorage.com/_nw/22/79844313.jpg';
 
@@ -29,6 +29,6 @@ class BePrepare implements MessageHandler
      */
     static public function isHandlingMessage($message)
     {
-        return $message->content === '!prepareyouranus' || $message->content === '!beprepare';
+        return $message->content === '!prepareyouranus' || $message->content === '!beprepared';
     }
 }

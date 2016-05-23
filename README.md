@@ -28,4 +28,4 @@ Commandes
 - `!ow.timeleft` shows the remaining time before [Overwatch](https://playoverwatch.com/en-us/)'s launch.
 - `!dice 1d20+5` is a RPG tool to throw dice. You can use shortcuts like `!dice 20+3` (⇔ `!dice 1d20+3`) or `!dice 18` (⇔ `!dice 1d18+0`)
 - `!nms.timeleft` shows the remaining time before [No Man's Sky](http://www.no-mans-sky.com/)'s launch.
-- `!prepareyouranus` or `!beprepare` sends a link to [this image](http://memestorage.com/_nw/22/79844313.jpg).
+- `!prepareyouranus` or `!beprepared` sends a link to [this image](http://memestorage.com/_nw/22/79844313.jpg).
