@@ -4,6 +4,11 @@ namespace ModnarLluf\DiscBot\Handler;
 
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class OverwatchTimeleft
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class OverwatchTimeleft implements MessageHandler
 {
     const RELEASE_DATE = '2016-05-24 01:00:00';

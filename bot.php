@@ -8,4 +8,17 @@ if (!file_exists('./app/config.php')) {
 
 $config = require_once './app/config.php';
 
-$server = (new \ModnarLluf\DiscBot\Server($config))->run();
+use ModnarLluf\DiscBot\Handler as MessageHandler;
+
+$server = (new \ModnarLluf\DiscBot\Server(
+    $config,
+    [
+        new MessageHandler\Cat(),
+        new MessageHandler\TaGueule(),
+        new MessageHandler\Dicer(),
+        new MessageHandler\OnlyWatch(),
+        new MessageHandler\OverwatchTimeleft(),
+        new MessageHandler\Propre(),
+        new MessageHandler\NomanskyTimeleft(),
+    ]
+))->run();

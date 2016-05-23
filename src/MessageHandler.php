@@ -2,6 +2,11 @@
 
 namespace ModnarLluf\DiscBot;
 
+/**
+ * Interface MessageHandler
+ * @package ModnarLluf\DiscBot
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 interface MessageHandler {
 
     /**

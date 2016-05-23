@@ -5,6 +5,11 @@ namespace ModnarLluf\DiscBot\Handler;
 use GuzzleHttp\Client;
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class Cat
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class Cat implements MessageHandler
 {
     const THECATAPI_URL = 'http://thecatapi.com/api/images/get?type=jpg';

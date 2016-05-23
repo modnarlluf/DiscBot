@@ -2,6 +2,11 @@
 
 namespace ModnarLluf\DiscBot;
 
+/**
+ * Class Dispatcher
+ * @package ModnarLluf\DiscBot
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class Dispatcher
 {
     /**

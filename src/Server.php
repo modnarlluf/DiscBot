@@ -4,8 +4,12 @@ namespace ModnarLluf\DiscBot;
 
 use Discord\Discord;
 use Discord\WebSockets\WebSocket;
-use ModnarLluf\DiscBot\Handler as MessageHandler;
 
+/**
+ * Class Server
+ * @package ModnarLluf\DiscBot
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class Server
 {
     /** @var Discord */
@@ -20,39 +24,25 @@ class Server
     /** @var array */
     private $config;
 
-    public function __construct($config)
+    /**
+     * @param $config
+     * @param array $handlers
+     */
+    public function __construct($config, $handlers = [])
     {
         $this->config = $config;
         $this->discord = new Discord($config['bot']['token']);
         $this->ws = new WebSocket($this->discord);
-        $this->dispatcher = new Dispatcher();
+        $this->dispatcher = new Dispatcher($handlers);
 
-        $this->init();
+        $this->initWebsocket();
     }
 
-    public function init()
-    {
-        return $this
-            ->initDispatcher()
-            ->initWebsocket();
-    }
-
-    private function initDispatcher()
-    {
-        $this->dispatcher->addHandlers([
-            new MessageHandler\Cat(),
-            new MessageHandler\TaGueule(),
-            new MessageHandler\Dicer(),
-            new MessageHandler\OnlyWatch(),
-            new MessageHandler\OverwatchTimeleft(),
-            new MessageHandler\Propre(),
-            new MessageHandler\NomanskyTimeleft(),
-            new MessageHandler\BePrepare(),
-        ]);
-
-        return $this;
-    }
-
+    /**
+     * Initialize websocket
+     *
+     * @return $this
+     */
     private function initWebsocket()
     {
         $this->ws->on('ready', function ($discord) {
@@ -68,6 +58,11 @@ class Server
         return $this;
     }
 
+    /**
+     * Run server, aka start running the websocket...
+     *
+     * @return $this
+     */
     public function run()
     {
         $this->ws->run();
