@@ -1,16 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: frosito
- * Date: 23/05/16
- * Time: 13:25
- */
-
 namespace ModnarLluf\DiscBot\Handler;
-
 
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class NomanskyTimeleft
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Florian Rosito <florian@rosito.fr>
+ */
 class BePrepare implements MessageHandler
 {
     const URL = 'http://memestorage.com/_nw/22/79844313.jpg';
