@@ -46,6 +46,7 @@ class Server
             new MessageHandler\OnlyWatch(),
             new MessageHandler\OverwatchTimeleft(),
             new MessageHandler\Propre(),
+            new MessageHandler\NomanskyTimeleft(),
         ]);
 
         return $this;
