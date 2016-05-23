@@ -4,6 +4,11 @@ namespace ModnarLluf\DiscBot\Handler;
 
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class TaGueule
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class TaGueule implements MessageHandler
 {
     const TAGUEULE_URL = 'http://i.imgur.com/3CKPQ4W.gif';

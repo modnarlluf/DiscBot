@@ -2,10 +2,20 @@
 
 namespace ModnarLluf\DiscBot\Handler;
 
+use Discord\Parts\Channel\Message;
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class Dicer
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class Dicer implements MessageHandler
 {
+    /**
+     * @param Message $message
+     * @return bool
+     */
     public function handle($message)
     {
         list($n, $d, $p, $throws, $result) = $this->processMessage($message);
@@ -15,6 +25,10 @@ class Dicer implements MessageHandler
         return true;
     }
 
+    /**
+     * @param Message $message
+     * @return array
+     */
     private function processMessage($message)
     {
         preg_match('/^\!dice ((?P<n>\d+)d)?(?P<d>\d+)(\+(?P<p>\d+))?$/', $message->content, $matches);
@@ -39,6 +53,16 @@ class Dicer implements MessageHandler
         ];
     }
 
+    /**
+     * Get response text
+     *
+     * @param $n
+     * @param $d
+     * @param $p
+     * @param $throws
+     * @param $result
+     * @return string
+     */
     public function getResponse($n, $d, $p, $throws, $result)
     {
         return sprintf(
@@ -52,6 +76,10 @@ class Dicer implements MessageHandler
         );
     }
 
+    /**
+     * @param Message $message
+     * @return int
+     */
     static public function isHandlingMessage($message)
     {
         return preg_match('/^\!dice ((?P<n>\d+)d)?(?P<d>\d+)(\+(?P<p>\d+))?$/', $message->content);

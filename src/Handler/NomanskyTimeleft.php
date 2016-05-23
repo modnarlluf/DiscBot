@@ -4,6 +4,11 @@ namespace ModnarLluf\DiscBot\Handler;
 
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class NomanskyTimeleft
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class NomanskyTimeleft implements MessageHandler
 {
     const RELEASE_DATE = '2016-06-22 02:00:00';

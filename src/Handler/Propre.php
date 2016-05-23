@@ -4,6 +4,11 @@ namespace ModnarLluf\DiscBot\Handler;
 
 use ModnarLluf\DiscBot\MessageHandler;
 
+/**
+ * Class Propre
+ * @package ModnarLluf\DiscBot\Handler
+ * @author Brice Sigura <brice@sigura.fr>
+ */
 class Propre implements MessageHandler
 {
     const URL = 'http://i.imgur.com/GVmPhpF.gif';
