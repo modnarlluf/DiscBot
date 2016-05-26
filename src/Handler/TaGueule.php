@@ -32,4 +32,12 @@ class TaGueule implements MessageHandler
     {
         return $message->content === '!tagueule' || $message->content === '!tg';
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!tg !tagueule: sends an outrageous gif.';
+    }
 }

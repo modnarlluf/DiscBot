@@ -86,4 +86,12 @@ class OverwatchTimeleft implements MessageHandler
     {
         return $message->content === '!ow.timeleft';
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!ow.timeleft: shows the remaining time before Overwatch\'s launch.';
+    }
 }

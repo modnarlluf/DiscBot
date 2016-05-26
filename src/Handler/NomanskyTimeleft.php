@@ -69,4 +69,12 @@ class NomanskyTimeleft implements MessageHandler
     {
         return $message->content === '!nms.timeleft';
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!nms.timeleft: shows the remaining time before No Man\'s Sky\'s launch.';
+    }
 }

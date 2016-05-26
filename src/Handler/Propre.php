@@ -11,7 +11,7 @@ use ModnarLluf\DiscBot\MessageHandler;
  */
 class Propre implements MessageHandler
 {
-    const URL = 'http://i.imgur.com/GVmPhpF.gif';
+    const URL = 'http://i.imgur.com/JAzMyA1.gif';
 
     /**
      * @param $message
@@ -31,5 +31,13 @@ class Propre implements MessageHandler
     static public function isHandlingMessage($message)
     {
         return $message->content === '!propre';
+    }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!propre: sends a proper gif.';
     }
 }

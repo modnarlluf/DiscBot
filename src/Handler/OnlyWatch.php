@@ -33,4 +33,12 @@ class OnlyWatch implements MessageHandler
     {
         return strpos($message->content, 'http://onlywat.ch') !== false;
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return 'If a message contains http://onlywat.ch, this bot reply with an outrageous gif.';
+    }
 }

@@ -84,4 +84,16 @@ class Dicer implements MessageHandler
     {
         return preg_match('/^\!dice ((?P<n>\d+)d)?(?P<d>\d+)(\+(?P<p>\d+))?$/', $message->content);
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return <<<EOT
+!dice 1d20+2: throws RPG dice(s).
+              Shortcuts: !dice 20+3 ⇔ !dice 1d20+3
+                         !dice 18 ⇔ !dice 1d18+0
+EOT;
+    }
 }

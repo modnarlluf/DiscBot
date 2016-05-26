@@ -48,4 +48,12 @@ class Cat implements MessageHandler
     {
         return $message->content === '!cat';
     }
+
+    /**
+     * @return string
+     */
+    static public function getHelp()
+    {
+        return '!cat: sends a random picture of a cat, thanks to the cat api (thecatapi.com).';
+    }
 }
