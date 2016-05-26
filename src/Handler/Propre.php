@@ -11,7 +11,7 @@ use ModnarLluf\DiscBot\MessageHandler;
  */
 class Propre implements MessageHandler
 {
-    const URL = 'http://i.imgur.com/GVmPhpF.gif';
+    const URL = 'http://i.imgur.com/JAzMyA1.gif';
 
     /**
      * @param $message
