@@ -38,6 +38,6 @@ class Propre implements MessageHandler
      */
     static public function getHelp()
     {
-        return '!propre: sends an proper gif.';
+        return '!propre: sends a proper gif.';
     }
 }
