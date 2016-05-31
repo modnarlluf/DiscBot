@@ -13,11 +13,11 @@ class NomanskyTimeleft implements MessageHandler
 {
     const RELEASE_DATE = '2016-08-10 02:00:00';
 
-    const MESSAGE_COUNTDOWN = '%d jours %H heures %i minutes et %s secondes';
+    const MESSAGE_COUNTDOWN = '%m mois %d jours %H heures %i minutes et %s secondes';
 
     const MESSAGE_COUNTDOWN_OVER = 'Le jeu est lancé depuis '. self::MESSAGE_COUNTDOWN .' ! Go rejoindre le centre de l\'univers !';
 
-    const MESSAGE_ENDING = 'avant de pouvoir se prendre pour un astronaute dans No Man\s Sky !';
+    const MESSAGE_ENDING = 'avant de pouvoir se prendre pour un astronaute dans No Man\'s Sky !';
 
     const MESSAGE_ERROR = 'Erreur lors du décompte. :(';
 
@@ -27,7 +27,7 @@ class NomanskyTimeleft implements MessageHandler
      */
     public function handle($message)
     {
-        $message->channel->sendMessage($this->getResponse());
+        $message->reply($this->getResponse());
 
         return true;
     }
