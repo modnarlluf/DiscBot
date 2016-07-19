@@ -9,7 +9,7 @@ use ModnarLluf\DiscBot\MessageHandler;
  * @package ModnarLluf\DiscBot\Handler
  * @author Brice Sigura <brice@sigura.fr>
  */
-class Propre implements MessageHandler
+class Nice implements MessageHandler
 {
     const URL = 'http://i.imgur.com/e5ntYHu.jpg';
 
