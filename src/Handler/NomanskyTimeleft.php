@@ -11,13 +11,17 @@ use ModnarLluf\DiscBot\MessageHandler;
  */
 class NomanskyTimeleft implements MessageHandler
 {
-    const RELEASE_DATE = '2016-08-10 02:00:00';
+    const RELEASE_DATE = '2016-08-12 02:00:00';
 
     const MESSAGE_COUNTDOWN = '%m mois %d jours %H heures %i minutes et %s secondes';
 
     const MESSAGE_COUNTDOWN_OVER = 'Le jeu est lancé depuis '. self::MESSAGE_COUNTDOWN .' ! Go rejoindre le centre de l\'univers !';
 
-    const MESSAGE_ENDING = 'avant de pouvoir se prendre pour un astronaute dans No Man\'s Sky !';
+    const MESSAGE_ENDINGS = [
+        'avant de pouvoir se prendre pour un astronaute dans No Man\s Sky !',
+        'avant le prochain delay...',
+        'avant de casser de la sentinelle !',
+    ];
 
     const MESSAGE_ERROR = 'Erreur lors du décompte. :(';
 
@@ -40,7 +44,7 @@ class NomanskyTimeleft implements MessageHandler
         if ($countdown = $this->getCountdown()) {
             if ($countdown->invert) {
 
-                return $countdown->format(self::MESSAGE_COUNTDOWN) .' '. self::MESSAGE_ENDING;
+                return $countdown->format(self::MESSAGE_COUNTDOWN) .' '. $this->randMessageEnding();
             } else {
 
                 return $countdown->format(self::MESSAGE_COUNTDOWN_OVER);
@@ -68,6 +72,16 @@ class NomanskyTimeleft implements MessageHandler
     static public function isHandlingMessage($message)
     {
         return $message->content === '!nms.timeleft';
+    }
+	
+    /**
+     * Return a random message from MESSAGE_ENDINGS
+     *
+     * @return mixed
+     */
+    private function randMessageEnding()
+    {
+        return self::MESSAGE_ENDINGS[mt_rand(0, count(self::MESSAGE_ENDINGS)-1)];
     }
 
     /**
