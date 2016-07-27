@@ -21,5 +21,6 @@ $server = (new \ModnarLluf\DiscBot\Server(
         new MessageHandler\Propre(),
         new MessageHandler\NomanskyTimeleft(),
         new MessageHandler\Nice(),
+        new MessageHandler\Titre(),
     ]
 ))->run();
