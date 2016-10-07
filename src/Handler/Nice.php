@@ -30,7 +30,7 @@ class Nice implements MessageHandler
      */
     static public function isHandlingMessage($message)
     {
-        return $message->content === 'nice' || $message->content === '!nice';
+        return $message->content === '!nice';
     }
 
     /**
@@ -38,6 +38,6 @@ class Nice implements MessageHandler
      */
     static public function getHelp()
     {
-        return '!nice (or juste "nice"): dark humor certified.';
+        return '!nice: dark humor certified.';
     }
 }
